@@ -17,7 +17,7 @@ $("#update_note").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:8080/api/notes/${data.id}`,
+        "url" : `https://my-notes-taking-app.herokuapp.com/api/notes/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -34,9 +34,9 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:8080/api/notes/${id}`,
-            "method" : "DELETE"
-        }
+          url: `https://my-notes-taking-app.herokuapp.com/api/notes/${id}`,
+          method: "DELETE",
+        };
 
         if(confirm("Do you really want to delete this record?")){
             $.ajax(request).done(function(response){
