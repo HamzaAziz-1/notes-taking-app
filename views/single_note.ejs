@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Note</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> Note</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="fw-bold">Date and Time of Note Creation</h2>
+            <h5 class="fw-bold"> <%= note.time%></h5>
+        </div>
+
+        <!-- add note form -->
+         <!-- form handling -->
+ <form method="POST" id="single_note">
+    <div class="new_note">
+        <div class="form-group">
+             <h2 class="fw-bold">Title:</h2>
+         
+           <h4 class="px-5">
+            <%= note.title %>
+           </h4>
+           <h2 class="pb-2 pt-3 fw-bold">Description:</h2>
+      <div class="form-floating">
+  <textarea class="form-control" placeholder="" id="floatingTextarea"  style="height: 17em;"><%= note.description %></textarea>
+  <label for="floatingTextarea"> </label>
+</div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
+
+</body>
+</html>
+
